@@ -29,12 +29,17 @@ void setup() {
 
 
 void draw() {
+  textSize(25);
+  fill(0);
+  text("(A)", 540, 580);
+  text("(B)", 15, 50);
   for (int n=0; n<4; n++) {
     fill(0);
     line(150+100*n, 50, 150+100*n, 550);
     line(50, 150+100*n, 550, 150+100*n);
-    text(n+1, 150+100*n, 570);
-    text(4-n, 30, 150+100*n);
+    textSize(25);
+    text(n+1, 140+100*n, 580);
+    text(4-n, 20, 160+100*n);
   }
   strokeWeight(5);
   line(50, 50, 50, 550);
@@ -42,10 +47,10 @@ void draw() {
 
   for (int t=0; t<16; t++) {
     maru[t].spot();
-    ellipse(150+maru[t].x*100, 450-maru[t].y*100, 10*(maru[t].count), 10*(maru[t].count));
+    ellipse(150+maru[t].x*100, 450-maru[t].y*100, 20*sqrt(maru[t].count), 20*sqrt(maru[t].count));
     if (maru[t].count!=0) { 
       fill(0);
-      textSize(16);
+      textSize(22);
       textAlign(CENTER);
       text(maru[t].count, 169+maru[t].x*100, 435-maru[t].y*100);
       text(maru[t].count, 171+maru[t].x*100, 435-maru[t].y*100);
@@ -53,7 +58,7 @@ void draw() {
       text(maru[t].count, 170+maru[t].x*100, 434-maru[t].y*100);
 
       fill(255);
-      textSize(16);
+      textSize(22);
       textAlign(CENTER);
     }
     text(maru[t].count, 170+maru[t].x*100, 435-maru[t].y*100);
